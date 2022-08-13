@@ -87,7 +87,7 @@ def check_accuracy(dl, model):
       y = y.to(device=device)
 
       score = model(x)
-      _, pred = torch.max(scores, dim=1)
+      _, pred = torch.max(score, dim=1)
       acc = torch.tensor(torch.sum(pred == labels).item()/len(pred))
 
     print(f'validation accuracy {acc}')
